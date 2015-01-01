@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatitude</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <script type="text/javascript" src="./assets/js/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="./assets/js/handlebars-v2.0.0.js"></script>
+  <script type="text/javascript" src="./assets/js/chatitude.js"></script>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Chatitude</h1>
+  </div>
+
+  <div id="content">
+
+  </div>
+
+</body>
+
+<script id="chat-template" type="text/x-handlebars-template">
+  <div class="chat" data-chat-id="{{ id }}">
+    <p><strong>{{ user }}</strong>: {{ message }}</p>
+  </div>
+</script>
+</html>
+
