@@ -3,8 +3,30 @@ html {
   background-color: #FAFAFA;
 }
 
+.user {
+  position  : fixed;
+  top       : 0;
+  right     : 0;
+  width     : 250px;
+  height    : 40px;
+  border-radius     : 0 0 0 8px;
+  border-style: solid;
+  border-color: rgba(73, 73, 71, 0.3);
+  border-width: 1px;
+  border-top: 0;
+  background-color  : #ddddd9;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+#ident {
+  color: #444;
+  font-weight: bold;
+}
+
 .header {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -27,7 +49,7 @@ html {
   min-height: 20px;
   width: 50%;
 
-};
+}
 
 .input, .input-text, .input-text--large, .input-textbox {
   border-radius: 4px;
@@ -39,13 +61,13 @@ html {
   box-sizing: border-box;
   box-shadow: none; 
 }
-  .input:hover, .input-text:hover, .input-text--large:hover, .input-textbox:hover {
+  .input:hover, .input-text:hover, .input-text--large:hover, {
     border-color: rgba(73, 73, 71, 0.5); 
   }
-  .input:active, .input-text:active, .input-text--large:active, .input-textbox:active {
+  .input:active, .input-text:active, .input-text--large:active, {
     border-color: #1fc0ef; 
   }
-  .input:focus, .input-text:focus, .input-text--large:focus, .input-textbox:focus {
+  .input:focus, .input-text:focus, .input-text--large:focus, {
     border-color: #1fc0ef; 
   }
 
@@ -59,7 +81,8 @@ html {
   resize: none;
   height: 4rem;
   min-height: 450px;
-  padding-bottom: 3rem; 
+  padding-bottom: 3rem;
+  background-color: #EEE; 
   overflow: scroll;
 }
   .input-textbox:active {
@@ -80,6 +103,16 @@ html {
   .input-text:focus {
     border-color: #1fc0ef; 
   }
+
+.homeAction {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  display: block;
+  width: 20%;
+  padding: 1em;
+  box-sizing: border-box; 
+}
 
 .action {
   text-align: right;
