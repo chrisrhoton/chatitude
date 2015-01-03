@@ -11,8 +11,8 @@ var Chatitude = (function($) {
       getError;
 
   var errors = {
-    "username_taken"  : "That username is already taken.",
-    "default"         : "The username/password was not recognized."
+    "username_taken"  : "I'm sorry, but there was a problem signing in.  That username is already taken.",
+    "default"         : "I'm sorry, but there was a problem signing in.  The username/password was not recognized."
   };
 
   getError = function(response) {

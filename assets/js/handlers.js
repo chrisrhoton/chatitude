@@ -103,7 +103,7 @@ $(document).ready( function() {
 
     Interface.loadHomePage($contentContainer, homePageHandler);
     Interface.clearErrors();
-    Interface.displayError("I'm sorry, but there was a problem signing in.  " + Chatitude.getError(error) );
+    Interface.displayError(Chatitude.getError(error) );
 
   };
 
