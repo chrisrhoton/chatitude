@@ -7,7 +7,8 @@ $(document).ready( function() {
       signupHandler,
       submitMessageHandler,
       homePageHandler,
-      getTimestamp;
+      getTimestamp,
+      loginFailHandler;
 
   getTimestamp = function() {
     return Math.round((new Date()).getTime() / 1000);
@@ -74,7 +75,7 @@ $(document).ready( function() {
 
     e.preventDefault();
     if(e.data) {
-      Chatitude.signUp(loginCreds, signupHandler);
+      Chatitude.signUp(loginCreds, signupHandler, loginFailHandler);
       return;
     }
 
@@ -92,6 +93,15 @@ $(document).ready( function() {
 
     var isSignup = $(this).data('signup') === 1;
     Interface.loadLoginInterface($contentContainer, isSignup, loginHandler);
+
+  };
+
+  loginFailHandler = function(e) {
+
+    console.log(e);
+
+    alert("I'm sorry, but there was a problem signing in.\n" + Chatitude.getError(JSON.parse(e.responseText)));
+    Interface.loadHomePage($contentContainer, homePageHandler);
 
   };
 

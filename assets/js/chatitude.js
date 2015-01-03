@@ -7,7 +7,18 @@ var Chatitude = (function($) {
       apiToken,
       postChat,
       setApiToken,
-      postMessage;
+      postMessage,
+      getError;
+
+  var errors = {
+    "username_taken"  : "That username is already taken."
+  };
+
+  getError = function(response) {
+
+    return errors[response.errors[0]] || "Unrecognized error";
+
+  };
 
   setApiToken = function(token) {
 
@@ -21,11 +32,13 @@ var Chatitude = (function($) {
 
   };
 
-  signUp = function(loginCreds, callback) {
+  signUp = function(loginCreds, callback, failCallback) {
 
-    var handler = callback || function() {};
+    var handler   = callback || function() {},
+        failFunc  = failCallback || function() { alert("I'm sorry.  There was an error signing up."); };
 
-    $.post(chatitudeBaseUrl + "signup", loginCreds, handler);
+    $.post(chatitudeBaseUrl + "signup", loginCreds, handler)
+      .fail(failFunc);
 
   };
 
@@ -45,10 +58,11 @@ var Chatitude = (function($) {
   };
 
   return {
-    getChats: getChats,
-    signUp: signUp,
-    signIn: signIn,
-    postMessage: postMessage
+    getChats    : getChats,
+    signUp      : signUp,
+    signIn      : signIn,
+    postMessage : postMessage,
+    getError    : getError
   };
 
 }(jQuery));
