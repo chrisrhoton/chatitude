@@ -90,6 +90,7 @@ $(document).ready( function() {
   homePageHandler = function(e) {
 
     e.preventDefault();
+    Interface.clearErrors();
 
     var isSignup = $(this).data('signup') === 1;
     Interface.loadLoginInterface($contentContainer, isSignup, loginHandler);
@@ -100,8 +101,9 @@ $(document).ready( function() {
 
     var error = e.responseText ? JSON.parse(e.responseText) : "default";
 
-    alert("I'm sorry, but there was a problem signing in.\n" + Chatitude.getError(error));
     Interface.loadHomePage($contentContainer, homePageHandler);
+    Interface.clearErrors();
+    Interface.displayError("I'm sorry, but there was a problem signing in.  " + Chatitude.getError(error) );
 
   };
 

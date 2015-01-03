@@ -1,11 +1,26 @@
 var Interface = (function($) {
 
-  var loadChatInterface,
+  var $errors = $('#errors'),
+      loadChatInterface,
       loadLoginInterface,
       clearInterface, 
       getLoginCreds,
       getMessage,
-      clearMessage;
+      clearMessage,
+      displayError,
+      clearErrors;
+
+  displayError = function(error) {
+
+    $errors.html('<p>' + error + '</p>');
+
+  };
+
+  clearErrors = function() {
+
+    $errors.html("");
+
+  };
 
   getMessage = function() {
 
@@ -95,7 +110,9 @@ var Interface = (function($) {
     getLoginCreds       : getLoginCreds,
     getMessage          : getMessage,
     clearMessage        : clearMessage,
-    loadHomePage        : loadHomePage
+    loadHomePage        : loadHomePage,
+    clearErrors         : clearErrors,
+    displayError        : displayError
   };
 
 }(jQuery));
