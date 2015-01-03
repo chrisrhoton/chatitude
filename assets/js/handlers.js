@@ -53,12 +53,18 @@ $(document).ready( function() {
 
   loadAllChats = function(chats) {
 
+    $('#chatstream').html("");
+
     var numChats = chats.length,
         i;
 
     for(i = 0; i < numChats; i++) {
       addChatToDOM(chats[i]);
     }
+
+    setTimeout( function() {
+      Chatitude.getChats(loadAllChats);
+    }, 1000);
 
   };
 
