@@ -30,7 +30,7 @@ $(document).ready( function() {
       Slider.initModule($('#menu'), loginCreds.username);
       Interface.loadChatInterface($contentContainer, submitMessageHandler);
       Chatitude.getChats(loadAllChats);
-    });
+    }, loginFailHandler);
 
   }
 
@@ -83,7 +83,7 @@ $(document).ready( function() {
       Slider.initModule($('#menu'), loginCreds.username);
       Interface.loadChatInterface($contentContainer, submitMessageHandler);
       Chatitude.getChats(loadAllChats);
-    });
+    }, loginFailHandler);
 
   };
 
@@ -98,9 +98,9 @@ $(document).ready( function() {
 
   loginFailHandler = function(e) {
 
-    console.log(e);
+    var error = e.responseText ? JSON.parse(e.responseText) : "default";
 
-    alert("I'm sorry, but there was a problem signing in.\n" + Chatitude.getError(JSON.parse(e.responseText)));
+    alert("I'm sorry, but there was a problem signing in.\n" + Chatitude.getError(error));
     Interface.loadHomePage($contentContainer, homePageHandler);
 
   };

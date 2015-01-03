@@ -11,12 +11,15 @@ var Chatitude = (function($) {
       getError;
 
   var errors = {
-    "username_taken"  : "That username is already taken."
+    "username_taken"  : "That username is already taken.",
+    "default"         : "The username/password was not recognized."
   };
 
   getError = function(response) {
 
-    return errors[response.errors[0]] || "Unrecognized error";
+    var errorKey = response === "default" ? response : response.errors[0];
+
+    return errors[errorKey] || "Unrecognized error";
 
   };
 
@@ -42,12 +45,15 @@ var Chatitude = (function($) {
 
   };
 
-  signIn = function(loginCreds, callback) {
+  signIn = function(loginCreds, callback, failCallback) {
+
+    var failFunc  = failCallback || function() { alert("I'm sorry.  There was an error signing up."); };
 
     $.post(chatitudeBaseUrl + "signin", loginCreds, function(token) {
       setApiToken(token); 
       callback();
-    });
+    })
+      .fail(failFunc);
 
   };
 
