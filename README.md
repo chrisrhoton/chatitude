@@ -11,5 +11,9 @@ TO DO
     - **Done** - a bit of a hack.  Could be improved.
   - Could do more with the slider menu.  Just displays username right now.
     - Could integrate it with the interface code.
-  - Display images from chats
+  - ~~Display images from chats~~
+    - Basic implementation in place.
+      - New problem: chat "message" content is not escaped.  Need to work on that.
+      - Could add better styling of images.  Maybe generate thumbnails with a link
+        to original image?
 
