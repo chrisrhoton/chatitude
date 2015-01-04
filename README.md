@@ -1,8 +1,17 @@
-Maker Square assignment
+##Maker Square assignment
 
-Objective: build a Javascript front-end to interface with a remote API.
+**Objective**: build a Javascript front-end to interface with a remote API.
 
-TO DO 
+**Original Spec**:
+
+>In this project you will be using JavaScript and jQuery to build an HTML frontend for an open chat server. In short you will implement:
+
+>A chat view
+>A signup form
+>A signin form
+>A "send chat message" form
+
+**TO DO** 
   - Waiting on server-side fix for problem with getting all chats 'since'
     - Will allow for "real-time" updates.  **Interim Solution**: Refreshing all chats every second.
   - ~~Need to handle sign-up errors (e.g. - when username already exists)~~
