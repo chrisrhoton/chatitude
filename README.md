@@ -6,10 +6,10 @@
 
 >In this project you will be using JavaScript and jQuery to build an HTML frontend for an open chat server. In short you will implement:
 
->A chat view
->A signup form
->A signin form
->A "send chat message" form
+> - A chat view
+> - A signup form
+> - A signin form
+> - A "send chat message" form
 
 **TO DO** 
   - Waiting on server-side fix for problem with getting all chats 'since'
