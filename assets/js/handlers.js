@@ -62,7 +62,7 @@ $(document).ready( function() {
         i;
 
     for(i = 0; i < numChats; i++) {
-      chats[i].message = chats[i].message.replace(re_images, "<img src='$1' width=100 height=100>");
+      chats[i].message = new Handlebars.SafeString(chats[i].message.replace(re_images, "<img src='$1' width=100 height=100>"));
       addChatToDOM(chats[i]);
     }
 
