@@ -12,6 +12,8 @@
 > - A "send chat message" form
 
 **TO DO** 
+  - Need to refactor code, create separate js file for each "view"
+    - Will need to create a "router" as well.
   - Waiting on server-side fix for problem with getting all chats 'since'
     - Will allow for "real-time" updates.  **Interim Solution**: Refreshing all chats every second.
   - ~~Need to handle sign-up errors (e.g. - when username already exists)~~
